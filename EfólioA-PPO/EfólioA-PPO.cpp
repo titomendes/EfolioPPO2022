@@ -1,9 +1,9 @@
 #include"Programa.h"
 #include <iostream>
 
-int main()
+int main()//e esta a versao final, fazer relatório
 {
-    Programa programa = Programa();
+    Programa programa = Programa();   //inicio do  programa;
 }
 
 

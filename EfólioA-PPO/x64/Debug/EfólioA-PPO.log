@@ -1,2 +1,3 @@
-﻿  Atividade.cpp
-  EfólioA-PPO.vcxproj -> C:\Users\tito_\source\repos\EfólioA-PPO\x64\Debug\EfólioA-PPO.exe
+﻿  Programa.cpp
+C:\Users\tito_\source\repos\EfólioA-PPO-FinalizadoCompleto\EfólioA-PPO\Programa.cpp(145): warning C4715: '`Programa::ordenar'::`2'::<lambda_1>::operator()': not all control paths return a value
+  EfólioA-PPO.vcxproj -> C:\Users\tito_\source\repos\EfólioA-PPO-FinalizadoCompleto\x64\Debug\EfólioA-PPO.exe

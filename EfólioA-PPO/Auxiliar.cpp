@@ -1,8 +1,6 @@
 #include "Auxiliar.h"
 
-using namespace std;
-
-int Auxiliar::inputIntUtilizador()//função de checar os numeros, fazer mais uma de float
+int inputIntUtilizador()//função de checar os numeros, fazer mais uma de float
 {
     int numero;
     while(!(cin>>numero))
@@ -11,35 +9,41 @@ int Auxiliar::inputIntUtilizador()//função de checar os numeros, fazer mais uma 
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "So valores numericos : ";
     }
-
     return numero;
 }
-float Auxiliar::inputFloatUtilizador()//função de checar os numeros, fazer mais uma de float
+
+float inputFloatUtilizador()
 {
+    string aux;
     float numero;
-    while (!(cin >> numero))
+
+    cin >> aux;
+    while (1)
     {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "So valores numericos : ";
+        if (aux.find_first_not_of("1234567890.") != string::npos)
+        {
+            cout << "So valores numericos validos : " << endl;
+            cin >> aux;
+        }
+        else
+        {
+            numero = stof(aux);
+            break;
+        }
     }
+
     if (numero < 0 || numero>1)
     {
         cout << "\nInsira valores entre 0 e 1: ";
         inputFloatUtilizador();
     }
-
     return numero;
+    
 }
 
 
-
-
-
-
-    bool Auxiliar::checkUrl(string url)//verifica o url enviando o url para duas funçoes
+    bool checkUrl(string url)//verifica o url enviando o url para duas funçoes
     {
-    
         if (verificaTeste(url) == false && verificaTeste2(url) == false)
             return false;
         else if (url == "http://" || url == "https://")
@@ -50,7 +54,8 @@ float Auxiliar::inputFloatUtilizador()//função de checar os numeros, fazer mais 
         else 
             return true;
     }
-    bool Auxiliar::verificaTeste(string url)//verificar a string mais pequena
+
+    bool verificaTeste(string url)//verificar a string mais pequena
     {
         string subString = url.substr(0, 7);
         string teste = "http://";
@@ -60,7 +65,7 @@ float Auxiliar::inputFloatUtilizador()//função de checar os numeros, fazer mais 
             return false;         
     }
 
-    bool Auxiliar::verificaTeste2(string url)//verificar a string maior
+    bool verificaTeste2(string url)//verificar a string maior
     {
         string subString = url.substr(0, 8);
         string teste2 = "https://";
@@ -70,7 +75,11 @@ float Auxiliar::inputFloatUtilizador()//função de checar os numeros, fazer mais 
             return false;
     }
 
-  
+     void sairDoEcra()
+    {
+        cout << "Prima enter para continuar";
+        cin.get();
+    }
 
     
 
